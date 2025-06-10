@@ -2,7 +2,6 @@ import '../components/css/MovieModal.css'
 
 const MovieModal = () => {
     return (
-    <>
     <div id="festivalModal" class="modal">
     <div class="modal-content">
     <span class="close">&times;</span>
@@ -13,7 +12,6 @@ const MovieModal = () => {
     <div id="artistLineup"></div>
     </div>
     </div>
-    </> 
     )
 }
 export default MovieModal

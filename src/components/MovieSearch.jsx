@@ -2,6 +2,7 @@ import '../components/css/MovieSearch.css'
 
 const MovieSearch = ({onMovieChange}) => {
 
+    // TODO:
     const handleSubmit = (event) => {
     event.preventDefault()
     const formData = new FormData(event.target)

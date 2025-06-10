@@ -1,30 +1,31 @@
 import '../components/css/MovieList.css'
 import MovieCard from './MovieCard'
+import { useEffect, useState } from 'react'
 
 const MovieList = () => {
+  const [movies, setMovie] = useState([0]);
+  const key = import.meta.env.VITE_API_KEY;
   const options = {
   method: 'GET',
   headers: {
     accept: 'application/json',
-    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxMTA4ZDk5MTcwN2M5ZDM4ODM1ODIxNmFmMzc1ZTEyZSIsIm5iZiI6MTc0OTUxMjUyNS4yNzYsInN1YiI6IjY4NDc3MTRkNjZhNGY4MjAxZjNmY2MzZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.ag3p2uZw06CpzmCAPXbNd4nGXxeDmxMwfmrAxNMexPI'
+    Authorization: `Bearer ${key}`
   }
 };
 
-// NO HARD CODE ^^
-
-fetch('https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1', options)
-  .then(res => res.json())
-  .then(res => console.log(res))
-  .catch(err => console.error(err));
+useEffect(() => {
+  fetch('https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1', options)
+    .then(res => res.json())
+    .then((data) => {
+    setMovie(data.results)
+    },[])
+});
 
   return (
     <div className="MovieList">
-        <MovieCard/>
-        <MovieCard/>
-        <MovieCard/>
-        <MovieCard/>
-        <MovieCard/>
-        <MovieCard/>
+      {movies.map((movie) => (
+        <MovieCard key={movie.id} img={`https://image.tmdb.org/t/p/original${movie.poster_path}`} title={movie.title} rating={parseFloat  (movie.vote_average).toFixed(2)}/>
+      ))};
     </div>
   )
 }

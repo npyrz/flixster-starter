@@ -4,13 +4,13 @@ import MovieSearch from './MovieSearch'
 
 const Navbar = () => {
     return (
-    <div className="Navbar">
+    <header>
         <h1>Flixster 🎥</h1>
         <div className='sortSearchClass'>
         <MovieSearch/>
         <MovieSort/>
         </div>
-    </div>
+    </header>
     )
 }
 

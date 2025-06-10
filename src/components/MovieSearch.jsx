@@ -14,7 +14,8 @@ const MovieSearch = ({onMovieChange}) => {
     <div className="MovieSearch">
     <form className="search-form" onSubmit={handleSubmit}>
         <input className="search-input" type="text" name="movie" placeholder="Search for movies..."/>
-        <button className="search-button" type="submit"><i class="fa fa-search"></i></button>
+        <button className="search-button" type="submit"><i className="fa fa-search"></i></button>
+        <button className="close-button" type="submit"><i className="fa fa-close"></i></button>
     </form>
     </div>
     )

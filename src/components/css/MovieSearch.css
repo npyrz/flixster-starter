@@ -1,6 +1,14 @@
-.MovieSearch {
-}
 .search-button {
+    background-color: #564d4d;
+    color: white;
+    cursor: pointer;
+    border-radius: 15px;
+    font-size: 20px;
+    border: none;
+    margin-right: 5px;
+}
+
+.close-button {
     background-color: #564d4d;
     color: white;
     cursor: pointer;
@@ -18,11 +26,7 @@
 
 input[type=text] {
     width: 225px;
-    padding: 12px 20px;
+    padding: 12px;
     margin: 8px;
     outline: none;
-}
-
-input[type=text]:focus {
-    border: 2px solid black;
 }

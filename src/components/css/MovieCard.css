@@ -1,11 +1,22 @@
 .MovieCard{
-    padding-top: 25px;
-}
-article {
+    margin-top: 25px;
     background-color: #831010;
     height: 250px;
     width: 250px;
     display: flex;
     flex-flow: column wrap;
     border-radius: 20px;
+    transition: 0.5s;
+    align-items: center;
+}
+
+.MovieCard:hover {
+    width: 300px;
+    width: 300px;
+}
+
+.imgSource {
+    height: 100px;
+    width: 100px;
+    margin-top: 15px    ;
 }

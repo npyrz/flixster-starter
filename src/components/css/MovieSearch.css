@@ -1,0 +1,28 @@
+.MovieSearch {
+}
+.search-button {
+    background-color: #564d4d;
+    color: white;
+    cursor: pointer;
+    border-radius: 15px;
+    font-size: 20px;
+    border: none;
+}
+
+.search-input{
+    border-radius: 15px;
+    background-color: #564d4d;
+    color: white;
+    border: none;
+}
+
+input[type=text] {
+    width: 225px;
+    padding: 12px 20px;
+    margin: 8px;
+    outline: none;
+}
+
+input[type=text]:focus {
+    border: 2px solid black;
+}

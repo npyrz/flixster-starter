@@ -1,0 +1,13 @@
+.MovieSort {
+
+}
+select {
+    width: 225px;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #564d4d;
+    color: white;
+    position: absolute;
+    right: 1%;
+}

@@ -1,0 +1,10 @@
+.Navbar {
+    background-color: #E50914;
+    width: 100%;
+}
+
+.sortSearchClass {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

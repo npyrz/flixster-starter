@@ -10,8 +10,6 @@ const MovieSort = () => {
     <option value='rating'>Rating Descending</option>
     </select>   
     </form>
-
-    
     </div>
     )
 }

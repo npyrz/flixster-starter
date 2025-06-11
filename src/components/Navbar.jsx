@@ -2,14 +2,14 @@ import '../components/css/Navbar.css'
 import MovieSort from './MovieSort'
 import MovieSearch from './MovieSearch'
 
-const Navbar = () => {
+const Navbar = ({ onMovieChange }) => {
     return (
     <header>
         <div className="headerTitle">
-            Flixster 🎥
+        Flixster 🎥
         </div>
         <div className='sortSearchClass'>
-        <MovieSearch/>
+        <MovieSearch onMovieChange={onMovieChange}/>
         <MovieSort/>
         </div>
     </header>

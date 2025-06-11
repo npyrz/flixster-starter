@@ -9,12 +9,9 @@ const App = () => {
   const key = import.meta.env.VITE_API_KEY;
   const [movies, setMovie] = useState([]);
   const [page, setPage] = useState([1]);
-
-
   const [query, setQuery] = useState('');
-  const [results, setResults] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-
+  
+  // API FETCH FOR SEARCHING
   const search = {
   method: 'GET',
   headers: {
@@ -24,26 +21,21 @@ const App = () => {
 };
 
   useEffect(() => {
-    const fetchDat = async () => {
-    setIsLoading(true);
-    try {
-      fetch(`https://api.themoviedb.org/3/search/movie?query=${query}&include_adult=false&language=en-US&page=${page}`, search)
-      .then(res => res.json())
-      .then((data) => {
-      setResults(data);
-      });
-    } finally {
-      setIsLoading(false);
+    if (query != '') {
+    fetch(`https://api.themoviedb.org/3/search/movie?query=${query}&include_adult=false&language=en-US&page=${page}`, search)
+    .then(res => res.json())
+    .then((data) => {
+    setMovie([...query, ...data.results]);
     }
-}
-  if (query) {
-    fetchDat();
-  } else {
-    setResults([]);
-  }
+  )}
+  },[query]);
 
-}, [query]);
+const handleMovieChange = (newQuery) => {
+    setQuery(newQuery);
+  };
 
+
+// API FETCH FOR JUST DISPLAYING NOW PLAYING MOVIES
   const options = {
   method: 'GET',
   headers: {
@@ -51,7 +43,6 @@ const App = () => {
     Authorization: `Bearer ${key}`
   }
 };
-
 useEffect(() => {
   fetch(`https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=${page}`, options)
     .then(res => res.json())
@@ -66,8 +57,8 @@ const loadMorePages = () => {
 
   return (
     <div className="App">
-      <Navbar/>
-      <MovieList movies={movies}/>
+      <Navbar onMovieChange={handleMovieChange}/>
+      <MovieList movies={movies} query={query}/>
       <LoadMore onClick={loadMorePages}/>
       <Footer/>
     </div>

@@ -6,8 +6,9 @@ import LoadMore from './components/LoadMore'
 import { useEffect, useState } from 'react'
 
 const App = () => {
-  const [movies, setMovie] = useState([0]);
+  const [movies, setMovie] = useState([]);
   const [page, setPage] = useState([1]);
+  const [search, setSearch] = useState('');
   const key = import.meta.env.VITE_API_KEY;
 
   const options = {
@@ -22,20 +23,12 @@ useEffect(() => {
   fetch(`https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=${page}`, options)
     .then(res => res.json())
     .then((data) => {
-    setMovie(prevMovies => [...prevMovies, ...data.results]);
+    setMovie([...movies, ...data.results]);
     });
 }, [page]);
 
-useEffect(() => {
-  fetch(`https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=${page}`, options)
-    .then(res => res.json())
-    .then((data) => {
-    setMovie(data.results);
-    });
-}, []);
-
 const loadMorePages = () => {
-  setPage(prev => prev + 1);
+  setPage(page => page + 1);
 };
 
   return (

@@ -1,11 +1,10 @@
 import '../components/css/MovieSearch.css'
 
 const MovieSearch = ({onMovieChange}) => {
-
-    // TODO:
     const handleSubmit = (event) => {
     event.preventDefault()
     const formData = new FormData(event.target)
+    // const test = event.target[0].value;
     const movieName = formData.get('movie')
     onMovieChange(movieName)
     event.target.reset();

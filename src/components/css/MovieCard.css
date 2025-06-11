@@ -9,11 +9,9 @@
     align-items: center;
 }
 
-/* TODO: FIX HOVER EFFECT */
-/* .MovieCard:hover {
-    width: 300px;
-    height: 350px;
-} */
+.MovieCard:hover {
+    width: 250px;
+}
 
 .imgSource {
     height: 175px;

@@ -10,6 +10,8 @@ const MovieList = ( {movies} ) => {
         img={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} 
         title={movie.title} 
         rating={parseFloat(movie.vote_average).toFixed(2)}
+        release_date={movie.release_date}
+        overview={movie.overview}
         />
       ))};
     </div>

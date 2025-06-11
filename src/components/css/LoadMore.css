@@ -1,0 +1,12 @@
+.loadMoreButton {
+    margin-bottom: 25px;
+    background-color: #564d4d;
+    color: white;
+    cursor: pointer;
+    border-radius: 15px;
+    font-size: 20px;
+    border: none;
+    width: 125px;
+    height: 50px;
+    margin-top: 50px;
+}

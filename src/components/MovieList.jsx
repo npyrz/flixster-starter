@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 
 const MovieList = () => {
   const [movies, setMovie] = useState([0]);
+  const [page, setPage] = useState([1]);
   const key = import.meta.env.VITE_API_KEY;
   const options = {
   method: 'GET',
@@ -14,7 +15,7 @@ const MovieList = () => {
 };
 
 useEffect(() => {
-  fetch('https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1', options)
+  fetch(`https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=${page}`, options)
     .then(res => res.json())
     .then((data) => {
     setMovie(data.results)
@@ -24,7 +25,7 @@ useEffect(() => {
   return (
     <div className="MovieList">
       {movies.map((movie) => (
-        <MovieCard key={movie.id} img={`https://image.tmdb.org/t/p/original${movie.poster_path}`} title={movie.title} rating={parseFloat  (movie.vote_average).toFixed(2)}/>
+        <MovieCard key={movie.id} img={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} title={movie.title} rating={parseFloat  (movie.vote_average).toFixed(2)}/>
       ))};
     </div>
   )

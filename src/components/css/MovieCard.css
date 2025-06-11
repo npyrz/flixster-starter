@@ -1,7 +1,7 @@
 .MovieCard{
     margin-top: 25px;
     background-color: #831010;
-    height: 250px;
+    height: 300px;
     width: 250px;
     display: flex;
     flex-flow: column wrap;
@@ -10,10 +10,11 @@
     align-items: center;
 }
 
-.MovieCard:hover {
+/* TODO: FIX HOVER EFFECT */
+/* .MovieCard:hover {
     width: 300px;
-    width: 300px;
-}
+    height: 350px;
+} */
 
 .imgSource {
     height: 100px;

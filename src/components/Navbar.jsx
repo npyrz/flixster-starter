@@ -5,7 +5,9 @@ import MovieSearch from './MovieSearch'
 const Navbar = () => {
     return (
     <header>
-        <h1>Flixster 🎥</h1>
+        <div className="headerTitle">
+            Flixster 🎥
+        </div>
         <div className='sortSearchClass'>
         <MovieSearch/>
         <MovieSort/>

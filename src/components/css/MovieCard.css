@@ -1,8 +1,7 @@
 .MovieCard{
     margin-top: 25px;
     background-color: #831010;
-    height: 300px;
-    width: 250px;
+    width: 200px;
     display: flex;
     flex-flow: column wrap;
     border-radius: 20px;
@@ -17,7 +16,8 @@
 } */
 
 .imgSource {
-    height: 100px;
-    width: 100px;
-    margin-top: 15px    ;
+    height: 175px;
+    width: 175px;
+    margin-top: 15px;
+    border-radius: 5px;
 }

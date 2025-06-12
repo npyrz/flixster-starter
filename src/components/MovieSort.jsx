@@ -1,10 +1,13 @@
 import '../components/css/MovieSort.css'
 
-const MovieSort = () => {
+const MovieSort = ( { onSort } ) => {
+    const sortChange = (e) => {
+        onSort(e.target.value);
+    }
     return (
     <div className="MovieSort">
-        <form action=''>
-            <select id='selectSort'>
+        <form>
+            <select id='selectSort' onChange={sortChange}>
                 <option value='popular'>Popularity Descending</option>
                 <option value='release'>Release Date Descending</option>
                 <option value='rating'>Rating Descending</option>

@@ -11,6 +11,21 @@ const App = () => {
   const [movies, setMovie] = useState([]);
   const [page, setPage] = useState([1]);
   const [query, setQuery] = useState('');
+  const [sort, setSort] = useState('');
+
+
+  const sortMovies = (movies) => {
+    switch(sort) {
+      case 'release':
+        return [...movies].sort((a,b) => new Date(b.release_data) - new Date(a.release_data));
+      case ' rating':
+        return [...movies].sort((a,b) => b.vote_average - a.vote_average);
+      case 'popular':
+        return [...movies].sort((a,b) => b.popularity - a.popularity);
+      default: 
+        return [...movies];
+    }
+  }
 
   const search = {
     method: 'GET',
@@ -60,8 +75,8 @@ const App = () => {
 
   return (
     <div className="App">
-      <Navbar onMovieChange={handleMovieChange} clearPage={clearPage}/>
-      <MovieList movies={movies} query={query}/>
+      <Navbar onMovieChange={handleMovieChange} clearPage={clearPage} onSort={setSort}/>
+      <MovieList movies={sortMovies(movies)} query={query}/>
       <LoadMore onClick={loadMorePages}/>
       <Footer/>
     </div>

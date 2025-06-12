@@ -10,7 +10,7 @@ const App = () => {
   const [movies, setMovie] = useState([]);
   const [page, setPage] = useState(1);
   const [query, setQuery] = useState('');
-  const [sort, setSort] = useState('');
+  const [sort, setSort] = useState('default');
 
 
   const sortMovies = (movies) => {
@@ -24,7 +24,6 @@ const App = () => {
       case 'alpha':
         return [...movies].sort((a,b) => a.title.localeCompare(b.title))
       case 'default':
-      default: 
         return [...movies];
     }
   }
@@ -71,6 +70,7 @@ const App = () => {
     setPage(0);
     setQuery('');
     setMovie([]);
+    setSort('default');
   }
 
   return (

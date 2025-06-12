@@ -1,8 +1,7 @@
 import '../components/css/MovieModal.css'
 
-const MovieModal = ( {isOpen, onClose, children} ) => {
+const MovieModal = ( {isOpen, onClose, children, id} ) => {
     if (!isOpen) return null;
-
     return (
     <div className="modal-overlay">
         <div className="modal-content">

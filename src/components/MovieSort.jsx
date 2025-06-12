@@ -8,6 +8,7 @@ const MovieSort = ( { onSort } ) => {
     <div className="MovieSort">
         <form>
             <select id='selectSort' onChange={sortChange}>
+                <option value='default'>Sort By:</option>
                 <option value='popular'>Popularity Descending</option>
                 <option value='release'>Release Date Descending</option>
                 <option value='rating'>Rating Descending</option>

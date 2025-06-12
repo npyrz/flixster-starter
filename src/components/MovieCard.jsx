@@ -2,11 +2,12 @@ import { useEffect, useState } from 'react'
 import '../components/css/MovieCard.css'
 import Modal from '../components/MovieModal'
 
-const MovieCard = ({img, title, rating, release_date, overview, id}) => {
+const MovieCard = ({img, title, rating, release_date, overview, id, homepage}) => {
   const key = import.meta.env.VITE_API_KEY;
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [runtime, setRuntime] = useState([]);
   const [genre, setGenre] = useState([]);
+  const [url, setUrl] = useState([]);
 
   const search = {
     method: 'GET',
@@ -31,6 +32,14 @@ const MovieCard = ({img, title, rating, release_date, overview, id}) => {
       setGenre(data.genres)
     })
     },[genre]);
+
+  useEffect(() => {
+    fetch(`https://api.themoviedb.org/3/movie/${id}/videos?language=en-US`, search)
+    .then(res => res.json())
+    .then((data) => {
+      setUrl(data.results)
+    })
+    },[url]);
   
   const formatDate = (release_date) => {
     const options = { month: 'long', weekday: 'long', day: 'numeric' };
@@ -55,9 +64,9 @@ const MovieCard = ({img, title, rating, release_date, overview, id}) => {
           <img src={img} alt={title}/>
           <h3>Release Date: {formatDate(release_date)}</h3>
           <p><b>Rating:</b> {rating}</p>
-          <p><b>Genres:</b> {genre.map(g => g.name).join(', ')}</p>
           <p><b>Runtime:</b> {Math.floor(parseInt(runtime)/60)} hour(s) {parseInt(runtime)%60} minutes</p>
           <p>{overview}</p>
+          <iframe src={`https://www.youtube.com/embed/`}></iframe>
         </Modal>
     </div>
   )

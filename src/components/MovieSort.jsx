@@ -11,6 +11,7 @@ const MovieSort = ( { onSort } ) => {
                 <option value='popular'>Popularity Descending</option>
                 <option value='release'>Release Date Descending</option>
                 <option value='rating'>Rating Descending</option>
+                <option value='alpha'>Alphabetically Descending</option>
             </select>   
         </form>
     </div>

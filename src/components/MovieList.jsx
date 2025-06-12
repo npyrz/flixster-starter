@@ -12,6 +12,7 @@ const MovieList = ( {movies} ) => {
         rating={parseFloat(movie.vote_average).toFixed(2)}
         release_date={movie.release_date}
         overview={movie.overview}
+        popularity={movie.popularity}
         />
       ))}
     </div>

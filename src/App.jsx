@@ -9,7 +9,7 @@ import LoadMore from './components/LoadMore'
 const App = () => {
   const key = import.meta.env.VITE_API_KEY;
   const [movies, setMovie] = useState([]);
-  const [page, setPage] = useState([1]);
+  const [page, setPage] = useState(1);
   const [query, setQuery] = useState('');
   const [sort, setSort] = useState('');
 
@@ -17,11 +17,13 @@ const App = () => {
   const sortMovies = (movies) => {
     switch(sort) {
       case 'release':
-        return [...movies].sort((a,b) => new Date(b.release_data) - new Date(a.release_data));
-      case ' rating':
+        return [...movies].sort((a,b) => new Date(b.release_date) - new Date(a.release_date));
+      case 'rating':
         return [...movies].sort((a,b) => b.vote_average - a.vote_average);
       case 'popular':
         return [...movies].sort((a,b) => b.popularity - a.popularity);
+      case 'alpha':
+        return [...movies].sort((a,b) => a.title.localeCompare(b.title))
       default: 
         return [...movies];
     }
@@ -61,7 +63,7 @@ const App = () => {
   };
 
   const loadMorePages = () => {
-    setPage(page => page + 1);
+    setPage(prev => prev + 1);
 };
 
 // TODO: CURRENTLY CAN RESET BUT RESETS TO MUCH AND DELETES ALL MOVIES

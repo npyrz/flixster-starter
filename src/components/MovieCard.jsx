@@ -54,8 +54,9 @@ const MovieCard = ({img, title, rating, release_date, overview, id}) => {
           <h1>{title}</h1>
           <img src={img} alt={title}/>
           <h3>Release Date: {formatDate(release_date)}</h3>
-          <p>Genres: {genre.map(g => g.name).join(', ')}</p>
-          <p>Runtime: {Math.floor(parseInt(runtime)/60)} hour(s) {parseInt(runtime)%60} minutes</p>
+          <p><b>Rating:</b> {rating}</p>
+          <p><b>Genres:</b> {genre.map(g => g.name).join(', ')}</p>
+          <p><b>Runtime:</b> {Math.floor(parseInt(runtime)/60)} hour(s) {parseInt(runtime)%60} minutes</p>
           <p>{overview}</p>
         </Modal>
     </div>

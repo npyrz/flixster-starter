@@ -5,7 +5,6 @@ import MovieList from './components/MovieList'
 import Footer from './components/Footer'
 import LoadMore from './components/LoadMore'
 
-
 const App = () => {
   const key = import.meta.env.VITE_API_KEY;
   const [movies, setMovie] = useState([]);
@@ -24,6 +23,7 @@ const App = () => {
         return [...movies].sort((a,b) => b.popularity - a.popularity);
       case 'alpha':
         return [...movies].sort((a,b) => a.title.localeCompare(b.title))
+      case 'default':
       default: 
         return [...movies];
     }
@@ -38,7 +38,6 @@ const App = () => {
   };
   
   // API FETCH FOR SEARCHING
-  // TODO: ISSUE WITH LOAD MORE WHEN SEARCHING  
   useEffect(() => {
     if (query != '') {
       fetch(`https://api.themoviedb.org/3/search/movie?query=${query}&language=en-US&page=${page}`, search)
@@ -51,7 +50,8 @@ const App = () => {
 
 // API FETCH FOR JUST DISPLAYING NOW PLAYING MOVIES
   useEffect(() => {
-    fetch(`https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=${page}`, search)
+    const url = query ? `https://api.themoviedb.org/3/search/movie?query=${query}&language=en-US&page=${page}` : `https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=${page}`;
+    fetch(url, search)
       .then(res => res.json())
       .then((data) => {
         setMovie([...movies, ...data.results]);
@@ -60,20 +60,18 @@ const App = () => {
 
   const handleMovieChange = (query) => {
     setQuery(query);
+    setPage(1);
   };
 
   const loadMorePages = () => {
-    setPage(prev => prev + 1);
-};
+    setPage(page => page + 1);
+  };
 
-// TODO: CURRENTLY CAN RESET BUT RESETS TO MUCH AND DELETES ALL MOVIES
   const clearPage = () => {
-    console.log("CLEAR CHECKED")
-    console.log(page)
-    setPage(1);
-    console.log(page)
+    setPage(0);
+    setQuery('');
     setMovie([]);
-}
+  }
 
   return (
     <div className="App">

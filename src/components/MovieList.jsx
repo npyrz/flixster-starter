@@ -13,7 +13,7 @@ const MovieList = ( {movies} ) => {
         release_date={movie.release_date}
         overview={movie.overview}
         />
-      ))};
+      ))}
     </div>
   )
 }

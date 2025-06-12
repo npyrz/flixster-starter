@@ -11,9 +11,7 @@ const App = () => {
   const [movies, setMovie] = useState([]);
   const [page, setPage] = useState([1]);
   const [query, setQuery] = useState('');
-  
-  // API FETCH FOR SEARCHING
-  // TODO: ISSUE WITH LOAD MORE WHEN SEARCHING  
+
   const search = {
     method: 'GET',
     headers: {
@@ -21,7 +19,9 @@ const App = () => {
       Authorization: `Bearer ${key}`
     }
   };
-
+  
+  // API FETCH FOR SEARCHING
+  // TODO: ISSUE WITH LOAD MORE WHEN SEARCHING  
   useEffect(() => {
     if (query != '') {
       fetch(`https://api.themoviedb.org/3/search/movie?query=${query}&language=en-US&page=${page}`, search)
@@ -33,17 +33,8 @@ const App = () => {
   },[query]);
 
 // API FETCH FOR JUST DISPLAYING NOW PLAYING MOVIES
-  const options = {
-    method: 'GET',
-    headers: {
-      accept: 'application/json',
-      Authorization: `Bearer ${key}`
-    }
-  };
-
-
   useEffect(() => {
-    fetch(`https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=${page}`, options)
+    fetch(`https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=${page}`, search)
       .then(res => res.json())
       .then((data) => {
         setMovie([...movies, ...data.results]);

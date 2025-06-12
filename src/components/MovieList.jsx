@@ -6,7 +6,7 @@ const MovieList = ( {movies} ) => {
     <div className="MovieList">
       {movies.map((movie) => (
         <MovieCard 
-        key={movie.id} 
+        id={movie.id} 
         img={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} 
         title={movie.title} 
         rating={parseFloat(movie.vote_average).toFixed(2)}

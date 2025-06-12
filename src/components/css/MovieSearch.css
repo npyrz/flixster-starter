@@ -1,20 +1,15 @@
 .search-button {
-    background-color: #564d4d;
-    color: white;
-    cursor: pointer;
-    border-radius: 15px;
-    font-size: 20px;
+    background-color: transparent;
     border: none;
-    margin-right: 5px;
+    color: white;
+    font-size: 25px;
 }
 
 .close-button {
-    background-color: #564d4d;
-    color: white;
-    cursor: pointer;
-    border-radius: 15px;
-    font-size: 20px;
+    background-color: transparent;
     border: none;
+    color: white;
+    font-size: 25px;
 }
 
 .search-input{

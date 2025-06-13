@@ -13,12 +13,11 @@ header   {
 .headerTitle{
     padding-top: 5px;
     font-size: 40px;
-    color: black;
+    color: white;
 }
 
 .button {
     background-color: #03adf6;
-    color: black;
     cursor: pointer;
     border-radius: 15px;
     font-size: 20px;
@@ -27,7 +26,6 @@ header   {
     width: 110px;
     margin-top: 13px;   
     margin-left: 20px;
-    color: black;
 }
 
 .navbarButtons {

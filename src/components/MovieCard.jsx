@@ -23,7 +23,7 @@ const MovieCard = ({img, title, rating, release_date, overview, id, modalImg, to
     .then((data) => {
       setRuntime([data.runtime])
     })
-    },[runtime]);
+    },[]);
 
   useEffect(() => {
     fetch(`https://api.themoviedb.org/3/movie/${id}?language=en-US`, search)
@@ -31,7 +31,7 @@ const MovieCard = ({img, title, rating, release_date, overview, id, modalImg, to
     .then((data) => {
       setGenre(data.genres)
     })
-    },[genre]);
+    },[]);
 
   useEffect(() => {
     fetch(`https://api.themoviedb.org/3/movie/${id}/videos?language=en-US`, search)
@@ -39,7 +39,7 @@ const MovieCard = ({img, title, rating, release_date, overview, id, modalImg, to
     .then((data) => {
       setUrl(data.results[0].key)
     })
-    },[url]);
+    },[]);
   
   const formatDate = (release_date) => {
     const options = { month: 'long', weekday: 'long', day: 'numeric' };
@@ -82,6 +82,7 @@ const MovieCard = ({img, title, rating, release_date, overview, id, modalImg, to
           <img src={modalImg} alt={title} className='modalImg'/>
           <p><b>Release Date:</b> {formatDate(release_date)}</p>
           <p><b>Rating:</b> {rating}</p>
+          <p><b>Genres:</b> {genre.map(g => g.name).join(', ')}</p>
           <p><b>Runtime:</b> {runtime} minutes</p>
           <p>{overview}</p>
           <iframe src={`https://www.youtube.com/embed/${url}`} className='modalVideo'></iframe>

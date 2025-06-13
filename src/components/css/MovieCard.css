@@ -19,3 +19,21 @@
     margin-top: 15px;
     border-radius: 5px;
 }
+.modalVideo {
+    width: 400px;
+    height: 225px;
+    border: none;
+}
+
+.likeButton {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 25px;
+}
+.watchedButton {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 25px;
+}

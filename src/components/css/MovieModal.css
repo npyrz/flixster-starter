@@ -18,6 +18,8 @@
 }   
 
 .exitButton {
+    display: flex;
+    flex-wrap: wrap;
     background-color: transparent;
     border: none;
     font-size: 30px;

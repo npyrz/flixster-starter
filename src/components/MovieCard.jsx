@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import '../components/css/MovieCard.css'
 import Modal from '../components/MovieModal'
 
-const MovieCard = ({img, title, rating, release_date, overview, id}) => {
+const MovieCard = ({img, title, rating, release_date, overview, id, modalImg}) => {
   const key = import.meta.env.VITE_API_KEY;
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [runtime, setRuntime] = useState([]);
@@ -56,19 +56,20 @@ const MovieCard = ({img, title, rating, release_date, overview, id}) => {
 
   return (
     <div className="MovieCard">
-      <div className="test" onClick={handleOpen}>
+      <div className="movieCardClick" onClick={handleOpen}>
         <img className ="imgSource" src={img} alt={title}/>
         <h3>{title}</h3>
-        <p>Rating: {rating}</p>
+        <button className='likeButton'><i className='fas fa-star'></i></button>
+        <button className='watchedButton'><i className='fa fa-video-camera'></i></button>
       </div>
         <Modal isOpen={isModalOpen} onClose={handleClose}>
           <h1>{title}</h1>
-          <img src={img} alt={title}/>
+          <img src={modalImg} alt={title} className='modalImg'/>
           <h3>Release Date: {formatDate(release_date)}</h3>
           <p><b>Rating:</b> {rating}</p>
           <p><b>Runtime:</b> {Math.floor(parseInt(runtime)/60)} hour(s) {parseInt(runtime)%60} minutes</p>
           <p>{overview}</p>
-          <iframe src={`https://www.youtube.com/embed/${url}`}></iframe>
+          <iframe src={`https://www.youtube.com/embed/${url}`} className='modalVideo'></iframe>
         </Modal>
     </div>
   )

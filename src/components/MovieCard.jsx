@@ -59,7 +59,7 @@ const MovieCard = ({img, title, rating, release_date, overview, id, modalImg}) =
       <div className="movieCardClick" onClick={handleOpen}>
         <img className ="imgSource" src={img} alt={title}/>
         <h3>{title}</h3>
-        <button className='likeButton'><i className='fas fa-star'></i></button>
+        <button className='likeButton'><i className='fa fa-star'></i></button>
         <button className='watchedButton'><i className='fa fa-video-camera'></i></button>
       </div>
         <Modal isOpen={isModalOpen} onClose={handleClose}>

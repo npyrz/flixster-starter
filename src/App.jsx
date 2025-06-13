@@ -12,7 +12,6 @@ const App = () => {
   const [query, setQuery] = useState('');
   const [sort, setSort] = useState('default');
 
-
   const sortMovies = (movies) => {
     switch(sort) {
       case 'release':
@@ -75,7 +74,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <Navbar onMovieChange={handleMovieChange} clearPage={clearPage} onSort={setSort}/>
+      <Navbar onMovieChange={handleMovieChange} clearPage={clearPage} onSort={setSort} sort={sort}/>
       <MovieList movies={sortMovies(movies)} query={query}/>
       <LoadMore onClick={loadMorePages}/>
       <Footer/>

@@ -37,7 +37,7 @@ const MovieCard = ({img, title, rating, release_date, overview, id, modalImg, to
     fetch(`https://api.themoviedb.org/3/movie/${id}/videos?language=en-US`, search)
     .then(res => res.json())
     .then((data) => {
-      setUrl(data.results[0])
+      setUrl(data.results[0].key)
     })
     },[]);
   
@@ -85,7 +85,7 @@ const MovieCard = ({img, title, rating, release_date, overview, id, modalImg, to
           <p><b>Genres:</b> {genre.map(g => g.name).join(', ')}</p>
           <p><b>Runtime:</b> {runtime} minutes</p>
           <p>{overview}</p>
-          <iframe src={`https://www.youtube.com/embed/${url.key}`} className='modalVideo'></iframe>
+          <iframe src={`https://www.youtube.com/embed/${url}`} className='modalVideo'></iframe>
         </Modal>
     </div>
   )

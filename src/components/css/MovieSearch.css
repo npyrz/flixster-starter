@@ -1,21 +1,21 @@
 .search-button {
     background-color: transparent;
     border: none;
-    color: white;
+    color: black;
     font-size: 25px;
 }
 
 .close-button {
     background-color: transparent;
     border: none;
-    color: white;
+    color: black;
     font-size: 25px;
 }
 
 .search-input{
     border-radius: 15px;
-    background-color: #564d4d;
-    color: white;
+    background-color: #03adf6;
+    color: black;
     border: none;
 }
 
@@ -24,4 +24,8 @@ input[type=text] {
     padding: 12px;
     margin: 8px;
     outline: none;
+}
+
+input::placeholder {
+    color: black;
 }

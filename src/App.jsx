@@ -13,7 +13,6 @@ const App = () => {
   const [sort, setSort] = useState('default');
   const [fav, setFav] = useState([]);
   const [showFav, setShowFav] = useState(false);
-
   const [watched, setWatched] = useState([]);
   const [showWatch, setShowWatch] = useState(false);
 

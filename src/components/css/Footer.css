@@ -1,9 +1,10 @@
 .Footer {
-    background-color: #831010;
+    background-color: #4083a3;
     width: 100%;
     position: fixed;
     margin-top: 50px;
     padding-top: 5px;
     height: 50px;
     bottom: 0;
+    color: black;
 }

@@ -71,7 +71,7 @@ const MovieCard = ({img, title, rating, release_date, overview, id, modalImg, to
         <h3>{title}</h3>
         <p><b>Rating:</b> {rating}</p>
           <button className='likeButton' onClick={handleDivLike}>
-            <i className={`fa fa-star`} style={{color: fav ? 'red' : 'white'}}></i>
+            <i className={`fa fa-star`} style={{color: fav ? 'gold' : 'white'}}></i>
           </button>
           <button className='watchedButton' onClick={handleDivWatch}>
             <i className={`fa fa-video-camera`} style={{color: watched ? 'red' : 'white'}}></i>

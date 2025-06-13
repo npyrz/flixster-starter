@@ -1,7 +1,7 @@
 .loadMoreButton {
     margin-bottom: 25px;
-    background-color: #564d4d;
-    color: white;
+    background-color: #03adf6;
+    color: black;
     cursor: pointer;
     border-radius: 15px;
     font-size: 20px;
@@ -12,5 +12,5 @@
 }
 
 .LoadMore {
-    padding-bottom: 100px;
+    padding-bottom: 80px;
 }

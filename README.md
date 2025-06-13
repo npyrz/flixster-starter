@@ -70,24 +70,24 @@ Deployed Application (**required**): [Flixster Deployed Site](https://flixster-s
 - [X] **Embedded Movie Trailers**
   - [X] Within the pop-up modal displaying a movie's details, the movie trailer is viewable.
     - [X] When the trailer is clicked, users can play the movie trailer.
-- [ ] **Favorite Button**
-  - [ ] For each movie displayed, users can favorite the movie.
-  - [ ] There should be visual element (such as a heart icon) on each movie's tile to show whether or not the movie has been favorited.
-  - [ ] If the movie is not favorited:
-    - [ ] Clicking on the visual element should mark the movie as favorited
-    - [ ] There should be visual feedback (such as the heart turning a different color) to show that the movie has been favorited by the user.
-  - [ ] If the movie is already favorited:
-    - [ ] Clicking on the visual element should mark the movie as *not* favorited.
-    - [ ] There should be visual feedback (such as the heart turning a different color) to show that the movie has been unfavorited. 
-- [ ] **Watched Checkbox**
-  - [ ] For each movie displayed, users can mark the movie as watched.
-  - [ ] There should be visual element (such as an eye icon) on each movie's tile to show whether or not the movie has been watched.
-  - [ ] If the movie has not been watched:
-    - [ ] Clicking on the visual element should mark the movie as watched
-    - [ ] There should be visual feedback (such as the eye turning a different color) to show that the movie has been watched by the user.
-  - [ ] If the movie is already watched:
-    - [ ] Clicking on the visual element should mark the movie as *not* watched.
-    - [ ] There should be visual feedback (such as the eye turning a different color) to show that the movie has not been watched.
+- [X] **Favorite Button**
+  - [X] For each movie displayed, users can favorite the movie.
+  - [X] There should be visual element (such as a heart icon) on each movie's tile to show whether or not the movie has been favorited.
+  - [X] If the movie is not favorited:
+    - [X] Clicking on the visual element should mark the movie as favorited
+    - [X] There should be visual feedback (such as the heart turning a different color) to show that the movie has been favorited by the user.
+  - [X] If the movie is already favorited:
+    - [X] Clicking on the visual element should mark the movie as *not* favorited.
+    - [X] There should be visual feedback (such as the heart turning a different color) to show that the movie has been unfavorited. 
+- [X] **Watched Checkbox**
+  - [X] For each movie displayed, users can mark the movie as watched.
+  - [X] There should be visual element (such as an eye icon) on each movie's tile to show whether or not the movie has been watched.
+  - [X] If the movie has not been watched:
+    - [X] Clicking on the visual element should mark the movie as watched
+    - [X] There should be visual feedback (such as the eye turning a different color) to show that the movie has been watched by the user.
+  - [X] If the movie is already watched:
+    - [X] Clicking on the visual element should mark the movie as *not* watched.
+    - [X] There should be visual feedback (such as the eye turning a different color) to show that the movie has not been watched.
 - [ ] **Sidebar**
   - [ ] The website includes a side navigation bar.
   - [ ] The sidebar has three pages:
@@ -118,8 +118,10 @@ Add your response here
 
 ### Open-source libraries used
 
-- Add any links to open-source libraries used in your project.
+- https://fontawesome.com/icons
 
 ### Shout out
 
-Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
+- Zen
+- Jesus
+- Terrance

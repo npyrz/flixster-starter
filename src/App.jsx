@@ -18,12 +18,12 @@ const App = () => {
   const [showWatch, setShowWatch] = useState(false);
 
   const toggleWatch = (movie) => {
-    setWatched(prev => {
-      const isWatch = prev.some(watched => watched.id === movie.id);
-      if (isWatch) {
-        return prev.filter(watched => watched.id !== watched.id);
+    setWatched(prevWatch => {
+      const isFav = prevWatch.some(watched => watched.id === movie.id);
+      if (isFav) {
+        return prevWatch.filter(watched => watched.id !== movie.id);
       } else {
-        return [...prev, movie]
+        return [...prevWatch, movie]
       }
     })
   }
@@ -101,8 +101,8 @@ const App = () => {
 
   return (
     <div className="App">
-      <Navbar onMovieChange={handleMovieChange} clearPage={clearPage} onSort={setSort} sort={sort} setShowFav={setShowFav}/>
-      <MovieList movies={showFav ? fav : sortMovies(movies)} toggleFav={toggleFav} fav={fav}/>
+      <Navbar onMovieChange={handleMovieChange} clearPage={clearPage} onSort={setSort} sort={sort} setShowFav={setShowFav} setShowWatch={setShowWatch}/>
+      <MovieList movies={showFav ? fav : showWatch ? watched : sortMovies(movies)} toggleFav={toggleFav} fav={fav} toggleWatch={toggleWatch} watched={watched}/>
       <LoadMore onClick={loadMorePages}/>
       <Footer/>
     </div>

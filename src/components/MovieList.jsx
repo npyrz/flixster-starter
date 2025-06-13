@@ -1,7 +1,7 @@
 import '../components/css/MovieList.css'
 import MovieCard from './MovieCard'
 
-const MovieList = ( {movies} ) => {
+const MovieList = ( {movies, toggleFav={toggleFav}, fav={fav}} ) => {
   return (
     <div className="MovieList">
       {movies.map((movie) => (
@@ -14,6 +14,10 @@ const MovieList = ( {movies} ) => {
         release_date={movie.release_date}
         overview={movie.overview}
         popularity={movie.popularity}
+        key={movie.id}
+        {...movie}
+        toggleFav={toggleFav}
+        fav={fav.some(fav => fav.id === movie.id)}
         />
       ))}
     </div>

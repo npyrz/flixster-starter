@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import '../components/css/MovieCard.css'
 import Modal from '../components/MovieModal'
 
-const MovieCard = ({img, title, rating, release_date, overview, id, modalImg}) => {
+const MovieCard = ({img, title, rating, release_date, overview, id, modalImg, toggleFav, fav}) => {
   const key = import.meta.env.VITE_API_KEY;
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [runtime, setRuntime] = useState([]);
@@ -53,19 +53,27 @@ const MovieCard = ({img, title, rating, release_date, overview, id, modalImg}) =
   const handleClose = () => {
     setIsModalOpen(false);
   };
+  
+  const handleDiv = (event) => {
+    event.stopPropagation();
+    toggleFav({img, title, rating, release_date, overview, id, modalImg})
+  }
 
   return (
     <div className="MovieCard">
       <div className="movieCardClick" onClick={handleOpen}>
         <img className ="imgSource" src={img} alt={title}/>
         <h3>{title}</h3>
-        <button className='likeButton'><i className='fa fa-star'></i></button>
+        <p><b>Rating:</b> {rating}</p>
+        <button className='likeButton' onClick={handleDiv}>
+          <i className={`fa ${fav ? 'fa-star' : 'fa-star-o'}`}></i>
+        </button>
         <button className='watchedButton'><i className='fa fa-video-camera'></i></button>
       </div>
         <Modal isOpen={isModalOpen} onClose={handleClose}>
-          <h1>{title}</h1>
+          <h3>{title}</h3>
           <img src={modalImg} alt={title} className='modalImg'/>
-          <h3>Release Date: {formatDate(release_date)}</h3>
+          <p><b>Release Date:</b> {formatDate(release_date)}</p>
           <p><b>Rating:</b> {rating}</p>
           <p><b>Runtime:</b> {Math.floor(parseInt(runtime)/60)} hour(s) {parseInt(runtime)%60} minutes</p>
           <p>{overview}</p>

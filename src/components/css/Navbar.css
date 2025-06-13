@@ -14,3 +14,15 @@ header   {
     padding-top: 5px;
     font-size: 40px;
 }
+
+.showFav {
+    background-color: #564d4d;
+    color: white;
+    cursor: pointer;
+    border-radius: 15px;
+    font-size: 20px;
+    border: none;
+    height: 30px;
+    width: 100px;
+    margin-top: 13px;
+}

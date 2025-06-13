@@ -16,43 +16,6 @@ const App = () => {
   const [watched, setWatched] = useState([]);
   const [showWatch, setShowWatch] = useState(false);
 
-  const toggleWatch = (movie) => {
-    setWatched(prevWatch => {
-      const isFav = prevWatch.some(watched => watched.id === movie.id);
-      if (isFav) {
-        return prevWatch.filter(watched => watched.id !== movie.id);
-      } else {
-        return [...prevWatch, movie]
-      }
-    })
-  }
-
-  const toggleFav = (movie) => {
-    setFav(prev => {
-      const isFav = prev.some(fav => fav.id === movie.id);
-      if (isFav) {
-        return prev.filter(fav => fav.id !== movie.id);
-      } else {
-        return [...prev, movie]
-      }
-    })
-  }
-
-  const sortMovies = (movies) => {
-    switch(sort) {
-      case 'release':
-        return [...movies].sort((a,b) => new Date(b.release_date) - new Date(a.release_date));
-      case 'rating':
-        return [...movies].sort((a,b) => b.vote_average - a.vote_average);
-      case 'popular':
-        return [...movies].sort((a,b) => b.popularity - a.popularity);
-      case 'alpha':
-        return [...movies].sort((a,b) => a.title.localeCompare(b.title))
-      case 'default':
-        return [...movies];
-    }
-  }
-
   const search = {
     method: 'GET',
     headers: {
@@ -61,7 +24,7 @@ const App = () => {
     }
   };
   
-  // API FETCH FOR SEARCHING
+  // API FETCH FOR SEARCHING OVERALL MOVIES
   useEffect(() => {
     if (query != '') {
       fetch(`https://api.themoviedb.org/3/search/movie?query=${query}&language=en-US&page=${page}`, search)
@@ -96,6 +59,43 @@ const App = () => {
     setQuery('');
     setMovie([]);
     setSort('default');
+  }
+
+    const toggleWatch = (movie) => {
+    setWatched(prevWatch => {
+      const isFav = prevWatch.some(watched => watched.id === movie.id);
+      if (isFav) {
+        return prevWatch.filter(watched => watched.id !== movie.id);
+      } else {
+        return [...prevWatch, movie]
+      }
+    })
+  }
+
+  const toggleFav = (movie) => {
+    setFav(prev => {
+      const isFav = prev.some(fav => fav.id === movie.id);
+      if (isFav) {
+        return prev.filter(fav => fav.id !== movie.id);
+      } else {
+        return [...prev, movie]
+      }
+    })
+  }
+
+  const sortMovies = (movies) => {
+    switch(sort) {
+      case 'release':
+        return [...movies].sort((a,b) => new Date(b.release_date) - new Date(a.release_date));
+      case 'rating':
+        return [...movies].sort((a,b) => b.vote_average - a.vote_average);
+      case 'popular':
+        return [...movies].sort((a,b) => b.popularity - a.popularity);
+      case 'alpha':
+        return [...movies].sort((a,b) => a.title.localeCompare(b.title))
+      case 'default':
+        return [...movies];
+    }
   }
 
   return (

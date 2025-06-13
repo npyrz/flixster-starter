@@ -2,7 +2,7 @@
 
 Submitted by: Noah Pyrzanowski
 
-Estimated time spent: **~21** hours spent in total
+Estimated time spent: **~24** hours spent in total
 
 Deployed Application (**required**): [Flixster Deployed Site](https://flixster-starter-10a3.onrender.com/)
 
@@ -100,21 +100,21 @@ Deployed Application (**required**): [Flixster Deployed Site](https://flixster-s
 
 ### Walkthrough Video
 
-`ADD_EMBEDDED_CODE_HERE`
+https://www.loom.com/share/537457171ca1410db30e95879627da67?sid=7257bddd-fbf3-44a2-9aff-dcf11d79b865
 
 ### Reflection
 
 * Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
-Add your response here
+I believe the topics that we learned in the lectures and labs were very helpful and were directly linked with the project we was very helpful. I liked how the information we learned from the lectures and demos were very informative and hands on, then leading to the information we learned and did on the projects was very helpful as it was direct knowledge from what we learned in the lecture. I personally believe the labs are the best part of the whole day when learning as it gives me time to directly solve hands on issues and learn at the same time based on similar things I will see when doing the project. Doing the labs for me wasn't directly making the project super easy it still had some diffucilties but it just made some parts easier as I already got the knowledge from doing the lab.
 
 * If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
   
-Add your response here
+If I had more time I would definitly go back and work on fixing the network issues I was facing in some parts when using the fetch. I would also like to try to optimize my code better and maybe try to organize it a little more although I beleive I did a way better job on that this week compared to last week. I would also like to maybe spend a little more time on CSS and learning some new things that we didn't cover through the labs and lectures.
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-Add your response here
+I believe that my project demo this week was definitly organized and written better than last weeks, I believe it has to do with getting back into the habit of coding web developement again and also using React which in my opinion is a better way to stay organzied with the components. I found that this projects week was very insightful and very helped me develop the skills I will need for my capstone project. Regarding changes I would make on the approach I would definitly try to work faster and spend less time trying to solve issues I find and try to get unblocked quicker. Some features I saw some peers do on there demos that I found interesting that I would do if I had time would be spending more time on the CSS aspect.
 
 ### Open-source libraries used
 
@@ -124,4 +124,6 @@ Add your response here
 
 - Zen
 - Jesus
-- Terrance
+- Terrence
+- Carlos
+- Bob
